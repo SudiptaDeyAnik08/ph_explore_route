@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 const Products =()=>{
     return(
         <div>   
-            <Header></Header>
+            
             <p>Hi from products</p>
         </div>
     )
