@@ -10,6 +10,7 @@ function Header() {
         <Link className='lia' to='/About'>About2</Link>
         <Link className='lia' to='/Products'>Products</Link>
         <Link className='lia' to='/post'>Post</Link>
+        <Link className='lia' to='/country'>Country</Link>
     
     </div>
   )
