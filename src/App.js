@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Products from './components/Products/Products';
 import Main from './components/Layout/Main';
 import UserDetail from './components/UserDetail/UserDetail';
+import Post from './components/Post/Post';
 
 function App() {
 
@@ -30,10 +31,16 @@ function App() {
           return  fetch(`https://jsonplaceholder.typicode.com/users/${params.a}`);
         },
         element:<UserDetail></UserDetail>
-      }
+      },
+      {
+        path:'/post',
+        loader:async()=>{
+          return fetch('https://jsonplaceholder.typicode.com/posts')
+        },
+        element:<Post></Post>
+      },
       
     ]  },
-
     {path:'*', element: <div>This Page is not found.Error 404...!</div>}
 
 
