@@ -5,6 +5,7 @@ import About from './components/About/About';
 import Home from './components/Home/Home';
 import Products from './components/Products/Products';
 import Main from './components/Layout/Main';
+import UserDetail from './components/UserDetail/UserDetail';
 
 function App() {
 
@@ -14,7 +15,22 @@ function App() {
 
       {path:'/about', element: <About></About>},
       {path:'/home',element: <Home></Home>},
-      {path:'/Products',element: <Products></Products>}
+      {
+        path:'/Products',
+        loader: async()=>{
+          return fetch('https://jsonplaceholder.typicode.com/users');
+        },
+        element: <Products></Products>
+      },
+      {
+        path:'/user/:a',
+        loader:async({params})=>{
+          
+          console.log(params);
+          return  fetch(`https://jsonplaceholder.typicode.com/users/${params.a}`);
+        },
+        element:<UserDetail></UserDetail>
+      }
       
     ]  },
 
